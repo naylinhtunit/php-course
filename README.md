@@ -1,17 +1,17 @@
 # Learn from sayar eimaung php book
 
-* url = https://eimaung.com
+* https://eimaung.com
+
+* My note
 
 * Syntax, Variables & Data Types
 
 ```
 <p>
  Total: 
- <?php
     $num1 = 3;
     $num2 = 5;
     echo $num1 + $num2;
- ?>
 </p>
 ```
 
@@ -34,13 +34,13 @@ Template & Alternative Syntax ရေးထုံး
 </code>
 
 ```
-<?php $hour = date('h') ?>
+$hour = date('h') ?>
 <p>
-    <?php if($hour < 6 || $hour > 18): ?>
+     if($hour < 6 || $hour > 18): ?>
         <b>Night Time</b>
-    <?php else: ?>
+     else: ?>
         <i>Day Time</i>
-    <?php endif ?>
+     endif ?>
 </p>
 ```
 
@@ -51,13 +51,12 @@ var_dump() က Variable ရဲ့ Data Type ကို ဖော်ပြယု�
 </code>
 
 ```
-<?php
-    $var;
-    var_dump($var); // Warning: Undefined Variable // NULL
-    $var = 123;
-    var_dump($var); // int(123)
-    $var = "abc";
-    var_dump ($var); // String(3) "abc"
+$var;
+var_dump($var); // Warning: Undefined Variable // NULL
+$var = 123;
+var_dump($var); // int(123)
+$var = "abc";
+var_dump ($var); // String(3) "abc"
 ```
 
 * Globale Variable
@@ -90,7 +89,6 @@ Variable တွေရှိမရှိ စစ်ချင်ရင် isset() �
 </code>
 
 ```
-<?php
 echo isset($name); // Empty
 $name = "Bob";
 echo isset($name); // 1
@@ -106,7 +104,6 @@ define() Function ရဲ့ ပထမ Argument မှာ Constant ရဲ့အ�
 
 
 ```
-<?php
 define("MIN", 1);
 define("MAX", 10);
 echo MAX; // 10
@@ -120,7 +117,6 @@ Escape လုပ်ဖို့လိုတဲ့ Character တွေကို \
 </code>
 
 ```
-<?php
 $fruit = "Apple";
 $price = 1.99;
 echo "Buy some $fruit for \$$price each.";
@@ -132,7 +128,6 @@ String တစ်ခုမှာ စာလုံးဘယ်နှစ်လုံ
 </code>
 
 ```
-<?php
 echo strlen("Hello World"); // 11
 ```
 <code>
@@ -140,7 +135,6 @@ echo strlen("Hello World"); // 11
 </code>
 
 ```
-<?php
 $str = "A quick brown fox.";
 echo substr($str, 0, 7); // A quick
 ```
@@ -150,7 +144,6 @@ echo substr($str, 0, 7); // A quick
 </code>
 
 ```
-<?php
 $str = "Come here, quick, quick.";
 echo str_replace("quick", "hurry", $str);
 // Come here, hurry, hurry.
@@ -166,7 +159,6 @@ Array ထဲမှာ ရှိတာကိုပဲ ခပ်ရှင်းရ
 </code>
 
 ```
-<?php
 $users = array("Alice", "Bob");
 $fruits = ["Apple", "Orange"];
 echo $users;
@@ -181,7 +173,6 @@ array(2) { [0]=> string(5) "Apple" [1]=> string(6) "Orange" }
 * Associative Array
 
 ```
-<?php
 $user = [ "name" => "Alice", "age" => 22];
 print_r($user);
 // Array ( [name] => Alice [age] => 22 )
@@ -192,7 +183,6 @@ Array တစ်ခုရဲ့အတွင်းမှ ထပ်ဆင့် Arr
 </code>
 
 ```
-<?php
 $users = [ 
 ["name" => "Alice", "age" => 22],
 ["name" => "Bob", "age" => 23],
@@ -206,7 +196,6 @@ Array ထဲက တန်ဖိုးတစ်ခုကို ရယူလို
 </code>
 
 ```
-<?php
 $users = [ 
 ["name" => "Alice", "age" => 22],
 ["name" => "Bob", "age" => 23],
@@ -223,7 +212,6 @@ Array တန်ဖိုးတွေ ထပ်တိုးသတ်မှတ်�
 </code>
 
 ```
-<?php
 $fruits = ['Apple', 'Orange'];
 $fruits[4] = 'Mango';
 print_r($fruits);
@@ -246,7 +234,6 @@ PHP မှာ မူလကတည်းက Array Destructuring ရေးဟန်
 </code>
 
 ```
-<?php
 $user = ["Alice", 22];
 list($name, $age) = $user;
 echo $name; // Alice
@@ -258,7 +245,6 @@ PHP 7.1 ကနေစပြီး ဒီလိုရေးလို့လည်�
 </code>
 
 ```
-<?php
 $user = ["Alice", 22];
 [ $name, $age ] = $user;
 echo $name; // Alice
@@ -269,7 +255,6 @@ Associative Array ဆိုရင် အခုလိုရေးပေးဖိ�
 </code>
 
 ```
-<?php
 $user = ["name" => "Alice", "age" => 22];
 ["name" => $name, "age" => $age] = $user;
 echo $name; // Alice
@@ -280,7 +265,6 @@ Array Spread လုပ်ဆောင်ချက်
 </code>
 
 ```
-<?php
 $nums1 = [1, 2];
 $nums2 = [ ...$nums1, 3 ];
 print_r($nums2);
@@ -292,7 +276,6 @@ Array တစ်ခုမှာပါဝင်တဲ့ Item အရေအတွ�
 </code>
 
 ```
-<?php
 $nums = [1, 2, 3, 4];
 echo count($nums); // 4
 ```
@@ -303,7 +286,6 @@ Variable တစ်ခုဟာ Array ဟုတ်မဟုတ် စစ်ချ
 </code>
 
 ```
-<?php
 $users = ["alice", "bob"];
 echo is_array($users); // 1
 ```
@@ -314,7 +296,6 @@ echo is_array($users); // 1
 </code>
 
 ```
-<?php
 $users = ["alice", "bob"];
 echo in_array('bob', $users); // 1
 ```
@@ -324,7 +305,6 @@ array_search() က တန်ဖိုးရှိမရှိ စစ်ပေး
 </code>
 
 ```
-<?php
 $users =["tom", "bob", "alice"];
 echo array_search("alice", $users); // 2
 ```
@@ -337,7 +317,6 @@ Array ရဲ့နောက်ဆုံးကနေ တန်ဖိုး ထပ
 </code>
 
 ```
-<?php
 $users =["alice", "bob"];
 array_push($users, "tom");
 print_r($users); // ["alice", "bob", "tom"]
@@ -350,7 +329,6 @@ Array ထဲက တစ်ချို့အပိုင်းတွေကို 
 </code>
 
 ```
-<?php
 $users =["tom", "bob", "alice"];
 $result = array_splice($users, 1, 1);
 print_r($users); // Array ( [0] => tom [1] => alice )
@@ -363,7 +341,6 @@ Array ရဲ့ Value တွေချည်းလိုချင်ရင် arr
 </code>
 
 ```
-<?php
 $user =["name" => "alice", "age" => 22];
 $keys = array_keys($user);
 $vals = array_values($user);
@@ -379,7 +356,6 @@ Array ကို Index နဲ့ ပြောင်းပြန်စီချင
 </code>
 
 ```
-<?php
 $users =["tom" => 23, "bob" => 22, "alice" => 24];
 sort($users);
 print_r($users);
@@ -398,7 +374,6 @@ implode()
 </code>
 
 ```
-<?php
 $input = "A quick brown fox.";
 $arr = explode(" ", $input);
 print_r($arr);
@@ -406,4 +381,331 @@ print_r($arr);
 $str = implode(" ", $arr);
 echo $str;
 // A quick brown fox.
+```
+
+* Operators & Control Structures
+
+<code>
+% သင်္ကေတကို အကြွင်းရှာဖို့သုံးပြီး 
+** သင်္ကေတကို Exponent ရှာဖို့အတွက် သုံးပါတယ်
+</code>
+
+```
+echo 5 % 3; // 2
+echo 2 ** 3; // 8
+```
+
+* Assignment Operators
+
+<code>
+PHP မှာလည်း = Operator ကို တန်ဖိုးတွေ သတ်မှတ်ဖို့အသုံပြုပြီး 
++= ကို တန်ဖိုးတွေပေါင်းထည့်ဖို့ သုံးပါတယ်
+အလားတူအနေနဲ့ -=, *=, /= Operator တွေလည်း ပါဝင်ပါသေးတယ်
+</code>
+
+```
+$num = 3;
+$num += 2;
+echo $num; // 5
+```
+
+<code>
+String တွေတွဲဆက်ထည့်သွင်းလို့ရတဲ့ .= Operator
+</code>
+
+```
+$result = "Welcome";
+$result .= " ";
+$result .= "Bob";
+echo $result; // Welcome Bob
+```
+
+<code>
+လက်ရှိတန်ဖိုးကို 1 တိုးဖို့နဲ့ 1 နှုတ်ဖို့အတွက် ++ နဲ့ -- Operator
+</code>
+
+```
+$x = 3;
+$y = $x++; // $y => 3, $x => 4
+```
+
+<code>
+$x ရဲ့ လက်ရှိတန်ဖိုး 3 ကို ++ နဲ့ 1 တိုးပြီး $y ထဲကို Assign လုပ်တဲ့အခါ ++ ကို
+နောက်ကနေရေးတဲ့အတွက် အလုပ်အရင်လုပ်ပြီးမှ 1 တိုးပါတယ် ဒါကြောင့် $y တန်ဖိုး 3 $x တန်ဖိုးကတော့ 4 ဖြစ်နေတာပါ ++ ကိုရှေ့ကရေးမယ်ဆိုရင်
+</code>
+
+```
+$x = 3;
+$y = ++$x; // $y => 4, $x => 4
+```
+
+* Comparison Operators
+
+<code>
+တန်ဖိုးတွေ ညီမညီ နှိုင်းယှဉ်ဖို့အတွက် == ကို Equal Operator 
+တန်ဖိုးတွေ မညီဘူးလား နှိုင်းယှဉ်ဖို့အတွက် != ကို Not Equal Operator 
+ဒါမှမဟုတ် <> ကို Not Equal Operator အနေနဲ့ သုံးနိုင်ပါတယ်
+Identical Equal Operator === နဲ့ Identical Not Equal Operator !== 
+</code>
+
+```
+echo 5 == "5"; // 1
+```
+
+<code>
+1 ဆိုတာ true ဆိုတဲ့အဓိပ္ပါယ်ဖြစ်ပါတယ် Integer 5 နဲ့ String "5" တို့ အမျိုး
+အစား မတူပေမယ့် တူအောင်ညှိပြီးအလုပ်လုပ်သွားလို့ ညီတယ်လို့ ပြောနေတာပါ 
+Identical Operator မှာတော့ Type ကိုတူအောင်မညှိဘဲ အရှိအတိုင်း နှိုင်းယှဉ်မှာ ဖြစ်ပါတယ်
+</code>
+
+```
+echo 5 === "5"; //
+```
+
+<code>
+တန်ဖိုးအကြီးအသေး နှိုင်းယှဉ်ဖို့အတွက် 
+Less Than <, 
+Greater Than >, 
+Less Than Equal <=, 
+Grater Than Equal >=
+</code>
+
+* Spaceship Operator
+
+```
+echo 3 <=> 5; // -1
+echo 5 <=> 5; // 0
+echo 5 <=> 3; // 1
+```
+
+* Logical Operators
+
+<code>
+! ကို NOT Operator,
+&& ကို AND Operator, 
+|| ကို OR Operator,
+and ဆိုတဲ့ Keyword ကိုလည်း AND Operator အနေနဲ့ အသုံးပြုနိုင်ပြီး 
+or ဆိုတဲ့ Keyword ကိုလည်း OR Operator အနေနဲ့ အသုံးပြုနိုင်ပါတယ်
+</code>
+
+```
+$x = 3;
+$y = 5;
+echo $x === $y || $x === 3; // 1 (true)
+echo $x === $y or $x === 3; // 1 (true)
+echo $x === $y && $x === 3; // (false)
+echo $x === $y and $x === 3; // (false)
+echo !($x === $y and $x === 3); // 1 (true)
+```
+
+* XOR Operator
+
+<code>
+OR က နှိုင်းယှဉ်တန်ဖိုး နှစ်ခုမှာ တစ်ခုမှန်ရင် ရလဒ်မှန်သလို နှစ်ခုလုံးမှန်ရင်လည်း ရလဒ်မှန်ပါတယ် XOR ကတော့ နှိုင်းယှဉ်တန်ဖိုးနှစ်ခုမှာ တစ်ခု မှန်ရင် ရလဒ်မှန်ပြီး နှစ်ခုလုံးမှန်ရင် ရလဒ်မှားပါတယ်
+</code>
+
+```
+$x = 3;
+$y = 5;
+echo $x < $y or $x === 3; // 1 (true)
+echo $x < $y xor $x === 3; // (false)
+```
+
+* Ternary & Null Coalescing Operator
+
+<code>
+Ternary Operator က ပေးလိုက်တဲ့ ပထမဆုံး Expression ရဲ့ ရလဒ် true ဖြစ်ရင် ? နောက်က Expression ကို ဆက်လုပ်သွားမှာဖြစ်ပြီး false ဖြစ်ရင် : နောက်က Expression ကို ဆက်လုပ်သွားမှာ ဖြစ်ပါတယ်
+</code>
+
+```
+$name = "";
+echo $name ? $name : "Unknown"; // Unknown
+$name = "Alice";
+echo $name ? $name : "Unknown"; // Alice
+```
+
+<code>
+အတိုကောက်ရေးထုံး
+</code>
+
+```
+$name = "";
+echo $name ?: "Unknown"; // Unknown
+$name = "Alice";
+echo $name ?: "Unknown"; // Alice
+```
+
+<code>
+$name ကသာ ကြိုတင်ရှိမနေရင် Undefined variable Warning တက်ပါလိမ့်မယ်
+
+</code>
+
+```
+echo $name ? $name : "Unknown";
+// Warning: Undefined variable $name
+echo $name ?: "Unknown";
+// Warning: Undefined variable $name
+```
+
+<code>
+isset() နဲ့ Variable ရှိမရှိ စစ်ပြီးမှ ရေးရင်တော့ ာ့ Undefined variable Warning မတက်ပါဘူး
+</code>
+
+```
+echo isset($name) ? $name : "Unknown"; // Unknown
+```
+
+* Null Coalescing Operator
+
+```
+echo $name ?? "Unknown"; // Unknown
+```
+
+* Null Coalescing Assignment Operator
+
+<code>
+$result ရဲ့ မူလတန်ဖိုး Alice ဖြစ်ပြီး $name ရှိနေရင် $name တန်ဖိုးကို $result ထဲမှာ Assign လုပ်လိုက်ချင်တာပါ မရှိရင်တော့ Assign မလုပ်စေချင်ပါဘူး ဒါကြောင့် Null Coalescing
+Assignment Operator ဖြစ်တဲ့ ??= ကို အသုံးပြုလိုက်တာပါ နမူနာအရ Assign လုပ်လိုက်ပေမယ့်
+$name တန်ဖိုး မရှိတဲ့အတွက် မူလတန်ဖိုး Alice ကိုပဲ ဖော်ပြပေးလိုက်တာပါ
+
+</code>
+
+```
+$result = "Alice";
+$result ??= $name;
+echo $result; // Alice
+```
+
+* Control Structures
+
+<code>
+if Statement
+elseif Statement
+</code>
+
+```
+$day = date("D");
+if($day === "Sun") {
+ echo "Today is Sunday.";
+} elseif ($day === "Sat") {
+ echo "Today is Saturday.";
+} else {
+echo "Today is a weekday.";
+}
+```
+
+<code>
+Switch Statement
+</code>
+
+```
+$day = date("D");
+switch($day) {
+ case "Sat":
+ case "Sun":
+ echo "Weekend";
+ break;
+ case "Fri":
+ echo "TGIF";
+ break;
+ default:
+ echo "Weekday";
+}
+```
+
+<code>
+PHP 8 မှာ switch Statement နဲ့ဆင်တူတဲ့ match Expression ဖြည့်စွက် ပါဝင်လာပါတယ်
+Expression ဖြစ်သွားတဲ့အတွက် Variable ထဲကို ထည့်လိုက်လို့ရ တာမျိုး အပါအဝင် ထူးခြားတဲ့ အသုံးပြုမှုမျိုးတွေနဲ့ သုံးလို့ရနိုင်သွားပါတယ် switch က တန်ဖိုးနှိုင်းယှဉ်ဖို့ == ကိုသုံးပြီး match က === ကိုသုံးတယ်ဆိုတာကိုလည်း သတိပြုပါ switch မှာ switch("5") လို့စစ်ထားရင် case 5 ကို အလုပ်လုပ်ပေးပါတယ် String "5" ကိုစစ်ထားပေမယ့် Integer 5 ဆိုရင်လည်း အလုပ်လုပ်ပေးမှာပါ match("5") လို့စစ်ထားရင်တော့ Int 5 => ကို အလုပ်လုပ်မှာ မဟုတ်ပါဘူး String "5" ကို စစ်ထားတဲ့အတွက် String "5" ကိုတွေ့မှသာ အလုပ်လုပ်မှာပါ
+</code>
+
+```
+$day = date("D");
+$result = match($day) {
+ "Sat", "Sun" => "Weekend",
+ "Fri" => "TGIF",
+ default => "Weekday"
+};
+echo $result;
+```
+
+* continue Statement
+
+<code>
+ပေးထားတဲ့ ကိန်းဂဏန်းတွေထဲမှာ အနှုတ်ကိန်းပါရင် ထည့်မပေါင်းဘဲ ကျော်လိုက်စေချင်တယ်ဆိုရင် ဒီလိုရေးလို့ရပါတယ်
+</code>
+
+```
+$nums = [12, 42, -2, 8, 621];
+$i = 0;
+$result = 0;
+while($i < count($nums)) {
+ if($nums[$i] < 0) {
+ $i++;
+ continue;
+ }
+ $result += $nums[$i];
+ $i++;
+}
+echo $result; // 683
+```
+
+<code>
+ပေးထားတဲ့ ကိန်းဂဏန်းတွေထဲမှာ အနှုတ်ကိန်းကိုတွေ့တာနဲ့ ရပ်လိုက် စေချင်ရင် အခုလိုရေးနိုင်ပါတယ် break နောက်ကနေ လိုအပ်ရင် Argument ထည့်ပေးလို့ရပါတယ် Default က 1 ဖြစ်ပါတယ် ဒါကြောင့် break; လို့ရေးလိုက်တာဟာ break 1; လို့ ရေးလိုက်တာနဲ့ အတူတူပါပဲ။ 1 လို့ပြောတဲ့အတွက် ကုဒ် Block တစ်ဆင့် ထွက်လိုက်မှာပါ။ အကယ်၍ နှစ်ဆင့်သုံးဆင့်ကျော်ပြီး ထွက်လိုက်ချင်ရင် break 2; တို့ break 3; တို့ကို အသုံးပြုနိုင်ပါတယ်။ continue မှာလည်း အလားတူပဲ လိုအပ်ရင် Argument ထည့်ပေးလို့ရပါတယ်
+</code>
+
+```
+$nums = [12, 42, -2, 8, 621];
+$i = 0;
+$result = 0;
+while($i < count($nums)) {
+ if($nums[$i] < 0) break;
+ $result += $nums[$i];
+ $i++;
+}
+echo $result; // 54
+```
+
+<code>
+do-while Statement ကတော့ အခြေခံအားဖြင့် while Statement နဲ့ အတူတူပါပဲ ကွာသွားတာက၊
+ရိုးရိုး while Statement မှာ Condition စစ်ပြီး မှန်မှအလုပ်လုပ်ပြီး၊ do-while Statement မှာတော့ အလုပ်အရင်လုပ်ပြီး Condition ကိုနောက်မှ စစ်တဲ့အတွက်၊ ပထမဆုံးတစ်ကြိမ် Condition မှန်သည်ဖြစ်စေ မှားသည်ဖြစ်စေ အလုပ်လုပ်သွားမှာ ဖြစ်ပါတယ်။ ဒါကြောင့် Condition မှန်သည်ဖြစ်စေ မှားသည်ဖြစ်စေ ပထမဆုံးအကြိမ်တော့ မဖြစ်မနေ အလုပ်လုပ်ဖို့လိုတဲ့ ကုဒ်တွေမှာ while အစား do-while ကို အသုံးပြုနိုင်ပါတယ်
+</code>
+
+```
+$nums = [12, 42, -2, 8, 621];
+$i = 0;
+$result = 0;
+do {
+ $result += $nums[$i];
+ $i++;
+} while($i < count($nums));
+echo $result; // 681
+```
+
+<code>
+for Statement ကိုတော့ Expression (၃) ခုကို Argument အနေနဲ့ ပေးပြီးရေးရပါတယ် ပထမဆုံး
+Expression ကို စစချင်းတစ်ကြိမ် အလုပ်လုပ်ပါတယ် အလယ်က Expression ကတော့ Condition ဖြစ်
+ပြီး မှန်မှ နောက်အကြိမ်တွေ ဆက်အလုပ်လုပ်မှာပါ နောက်ဆုံးက Expression ကိုတော့ Loop တစ်ကြိမ်
+ပြီးတိုင်းတစ်ခါအလုပ်လုပ်ပေးမှာပဲ ဖြစ်ပါတယ်
+</code>
+
+```
+$nums = [12, 42, -2, 8, 621];
+$result = 0;
+for($i = 0; $i < count($nums); $i++) {
+ $result += $nums[$i];
+}
+echo $result; // 681
+```
+
+<code>
+foreach Statement ကတော့ ပေးလိုက်တဲ့ Array ကို အစကနေအဆုံးထိ အလုပ်လုပ်သွားမှာမို့လို့ Condition တွေ ဘာတွေပေးစရာမလိုတော့ပါဘူး
+</code>
+
+```
+$nums = [12, 42, -2, 8, 621];
+$result = 0;
+foreach($nums as $num) {
+ $result += $num;
+}
+echo $result; // 681
 ```
