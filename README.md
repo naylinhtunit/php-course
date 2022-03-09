@@ -831,3 +831,527 @@ $x = 3;
 $add = fn($y) => $x + $y;
 echo $add(5); // 8
 ```
+
+* Named Arguments
+
+* Argument အမည်နဲ့ ပေးချင်တဲ့ တန်ဖိုးကို တွဲပေးလိုက်တဲ့အတွက် ရှေ့နောက်အစီအစဉ် မှန်စရာ မလိုအပ်တော့ပါဘူး 
+* ပေးတဲ့ Argument တွေများတဲ့အခါ နှစ်ကြောင်းသုံးကြောင်းခွဲရေးလို့ရတယ် ဆိုတာလေးကို မှတ်သားစေချင်ပါတယ်
+
+```
+function profile($name, $email, $age) {
+ echo "$name ($age) @ $email";
+}
+profile(
+ age: 23,
+ name: "Bob",
+ email: "bob@gmail.com",
+);
+// Bob (23) @ bob@gmail.com
+```
+
+* Object-Oriented Programming
+
+* PHP မှာ Public, Private နဲ့ Protected လို့ပေ]ါ်တဲ့ Access Control သတ်မှတ်ချက် (၃) မျိုး ရှိပါတယ်
+* Public ဆိုတာ ကြိုက်တဲ့နေရာမှာ အသုံးပြုခွင့်ရှိတယ်ဆိုတဲ့ အဓိပ္ပါယ်ဖ်စ်ပြီး 
+* Private ဆိုတာကတော့ လက်ရှိ Class အတွင်းမှာသာ အသုံးပြုခွင့်ရှိတယ်ဆိုတဲ့ အဓိပ္ပါယ်ပ် 
+* Protected ကတော့ လက်ရှိ Class နဲ့ လက်ရှိ Class ကို ဆက်ခံဖို့ဖြစ်ပေါ်လာတဲ့ Child Class တွေမှာ အသုံးပြုခွင့်ရှိတယ်ဆိုတဲ့အဓိပ္ပါယ်ပါ
+* Property တွေ Method တွေ သတ်မှတ်တဲ့အခါ ဒီလို Access Control တွေကို ထည့်သွင်းသတ်မှတ်ပေးရပါတယ်
+* Animal Class မှာ $name လို့ခေါ်တဲ့ Property နဲ့ run() လို့ခေါ်တဲ့ Method တစ်ခုပါဝင်
+သွားပါပြီ 
+* Property တွေသတ်မှတ်တဲ့အခါ Variable အနေနဲ့ပဲ သတ်မှတ်ပေးရပါတယ်
+* Method တွေ သတ်မှတ်လိုရင်တော့ Function တွေကို အသုံးပြုရတာပါ
+* $this လို့ခေါ်တဲ့ Pseudo Variable ကို သတိပြုပါ
+* Class အတွင်းမှာ ကြေညာထားတဲ့ Property တွေMethod တွေကို အသုံးပြုလိုရင် ဒီအတိုင်းခေါ်သုံးလိုက်လို့ မရပါဘူး 
+* $this ကနေတစ်ဆင့် သုံးပေးရပါတယ်
+* $this->name ဆိုတာဟာ သူ့အပေါ်မှာ ကြေညာထားတဲ့ $name Property ကို အသုံးပြုလိုက်ခြင်း
+ဖြစ်ပါတယ်
+
+```
+class Animal
+{
+ public $name;
+ public function run()
+ {
+ echo "$this->name is running...";
+ }
+}
+```
+
+* Class ကိုအသုံးပြုပြီး Object တည်တောက်လိုက်ရင် တည်ဆောက်လိုက်တဲ့ Object တွေမှာ
+name Property နဲ့ run() Method တို့ပါဝင်သွားမှာပဲ ဖြစ်ပါတယ်
+* Animal Class ကိုအသုံးပြုပြီး $dog Object ကိုတည်ဆောက်ထားပါတယ်
+* $dog Object မှာ name Property နဲ့ run() Method တို့ရှိနေပါပြီ
+* Object ရဲ့ Property တွေMethod တွေကို ရယူ/အသုံးပြုဖို့အတွက် Object Operator အနေနဲ့ -> သင်္ကေတကိုအသုံးပြုရပါတယ်
+* Dart Operator လို့ ခေါ်ကြပါတယ်
+* name Property ရဲ့ တန်ဖိုးကို Bobby လို့သတ်မှတ်ပေးလိုက်တာပါ
+* run() Method ကို ခေါ်ယူလိုက်တဲအခါ ရလဒ်အနေနဲ့ Bobby is running… ကို တွေ့မြင်ရမှာဖြစ်ပါတယ် 
+* run() Method က name Property ရဲ့တန်ဖိုးကို ထည့်သွင်း အသုံးပြုသွားတာပါ
+
+```
+$dog = new Animal;
+$dog->name = "Bobby";
+$dog->run(); // Bobby is running…
+```
+
+* Object ကနေ Property တွေMethod တွေကို အသုံးပြုလို့ရတယ်ဆိုတာ Public အဖြစ် ကြေညာ
+ရေးသားထားလို့ပါ
+* Public Member တွေကို အခုလိုအသုံးပြုခွင့်ရှိပါတယ်
+* Private ဆိုရင်တော့ အခုလိုသုံးလို့ရမှာ မဟုတ်ပါဘူး
+* name ဟာ Private Property ဖြစ်သွားပါပြီ
+* Object ကနေတစ်ဆင့် name ရဲ့တန်ဖိုးကို ပြောင်းဖို့ကြိုးစားတဲ့အခါ ပြောင်းခွင့် မရှိဘူးဆိုတဲ့ Error ကို ရရှိမှာ ဖြKစ်ပါတယ်
+
+```
+class Animal
+{
+ private $name;
+}
+$dog = new Animal;
+$dog->name = "Bobby";
+// Error: Cannot access private property
+```
+
+* Object တည်ဆောက်လိုက်တာနဲ့ အလုပ်လုပ်သွားစေချင်တာတွေ ရှိရင်လည်း သတ်မှတ်ထားနိုင်ပါတယ်
+* Constructor လို့ခေါ်ပါတယ် 
+* ရှေ့ဆုံးက Underscore နှစ်ခုနဲ့ စပေးရတာကို သတိပြုပါ
+
+```
+class Animal
+{
+ public function __construct()
+ {
+ echo "Creating Animal object";
+ }
+}
+$dog = new Animal;
+// Creating Animal object
+```
+
+* Constructor က Private ဆိုရင် Object တည်ဆောက်လို့ ရတော့မှာ မဟုတ်ပါဘူး
+* Object တည်ဆောက်ချိန်မှာ Constructor ကို အလုပ်လုပ်ဖို့ ကြိုးစားတဲ့အခါ မရနိုင်တဲ့အတွက်ပါ
+* Object တည်ဆောက်လို့မရတော့ဘဲ Error တက်သွားတာကို တွေ့ရမှာပါ
+
+```
+class Animal
+{
+ private function __construct()
+ {
+ echo "Creating Animal object...";
+ }
+}
+$dog = new Animal;
+// Error: Call to private __construct()
+```
+
+*  Class Member ခေါ် Static Member 
+*  Object တည်ဆောက်စရာ မလိုဘဲ Class အမည်ကနေ တိုက်ရိုက် အသုံးပြုလို့ရတဲ့ Property တွေMethod တွေကြေညာလို့ရနိုင်ပါတယ်
+* Static Property တစ်ခုနဲ့ Static Method တစ်ခုရှိနေတာကို တွေ့ရမှာပါ
+* Static Member တွေကို အသုံးပြုနိုင်ဖို့အတွက် Object မဆောက်တော့ဘဲ Class အမည်ဖြစ်တဲ့ Animal ပေါ်မှာ တိုက်ရိုက် အသုံးပြုထားတာကိုလည်း တွေ့ရနိုင်ပါတယ်
+* Static Member တွေကို ရယူဖို့အတွက် :: သင်္ကေတကို အသုံးပြုရတာကို သတိပြုပါ
+* Scope Resolution Operator လို့ခေါ်ပါတယ်
+* Double Colon Operator လို့လည်း ခေါ်နိုင်ပါတယ်
+* Class အတွင်းထဲမှာ Static Member တွေကို အသုံးပြုဖို့အတွက် $this ကို မသုံးဘဲ static ကို ပဲသုံးတယ် ဆိုတာလည်း သတိပြုပါ
+
+```
+class Animal
+{
+ static $type = "Mammal";
+ static function info()
+ {
+ echo "Group: " . static::$type;
+ }
+}
+echo Animal::$type; // Mammal
+Animal::info(); // Group: Mammal
+```
+
+* Object ဆောက်ခွင့်မပြုဘဲ Class Name တွေသာ တိုက်ရိုက်အသုံးပြုစေလို့တဲ့ အတွက် Static 
+* Member တွေကို Private Constructor နဲ့ တွဲသုံးတာမျိုးတွေ ရှိကြပါတယ်
+* $name ဆိုတဲ့အမည်နဲ့ Private Property တစ်ခု ပါသွားပါပြီ
+* Constructor က Argument တစ်ခုလက်ခံပြီး လက်ခံရရှိတဲ့ တန်ဖိုးကို Property အဖြစ် ပြောင်းပေးထားပါတယ်
+* Object တည်ဆောက်တဲ့ Argument တစ်ခုပေးမှပဲ တည်ဆောက်လို့ ရတော့မှာဖြစ်ပြီး ပေးလိုက်တဲ့
+Argument ဟာ Property တန်ဖိုးဖြစ်သွားမှာပါ
+
+```
+class Animal
+{
+ private $name;
+ public function __construct($name)
+ {
+ $this->name = $name;
+ }
+public function run()
+ {
+ echo "$this->name is running...";
+ }
+}
+$dog = new Animal("Bobby");
+$dog->run(); 
+```
+
+* PHP 8 မှာ Constructor Property Promotion လို့ခေါ်တဲ့ လုပ်ဆောင်ချက် အသစ်ထည့်သွင်း ပေးလာပါတယ်
+* Property ကို သပ်သပ် ကြေညာစရာ မလိုတော့သလို၊ Construct Argument ကို Property တန်ဖိုးဖြစ်အောင် Assign လုပ်ပေးတဲ့ ကုဒ်ကိုလည်း ကိုယ်ဘာသာ ရေးစရာ မလိုတော့ပါဘူး
+* Constructor ရဲ့ Argument မှာ Access Control Modifier ထည့်ရေးပေးလိုက်ယုံနဲ့ Property ကြေညာတဲ့အဆင့်နဲ့ တန်ဖိုး Assign လုပ်တဲ့အဆင့်၊ ရေးရတာ နှစ်ဆင့် လျော့သွားတာပါ
+
+```
+class Animal
+{
+ public function __construct(private $name)
+ {
+ //
+ }
+ public function run()
+ {
+ echo "$this->name is running...";
+ }
+}
+$dog = new Animal("Rambo");
+$dog->run(); // Rambo is running…
+```
+
+* Class တစ်ခုကိုရေးသားတဲ့အခါ အခြား Class ပေါ်မှာ အခြေခံပြီးတော့လည်း ရေးလို့ရပါတယ်
+* Inheritance လို့ခေါ်ပါတယ်
+* အမွေဆက်ခံပြီး Inherit လုပ်လိုက်တဲ့အခါ မူလပင်မ Class ရဲ့ လုပ်ဆောင်ချက်တွေကို ဆက်ခံသူက ရရှိသွားမှာ ဖြစ်ပါတယ်
+* ပင်မ Class ဖြစ်တဲ့ Animal မှာ Private Property ဖြစ်တဲ့ $name ရှိနေပါတယ်
+* Constructor နဲ့ run() Method တို့လည်း ရှိနေပါတယ်
+* Dog Class က extends ကိုသုံးပြီး Animal ကို ဆက်ခံလိုက်တဲ့အခါ Animal ရဲ့ လုပ်ဆောင်ချက်တွေကို ရရှိသွားပါပြီ
+* Constructor ကအစပင်မ Class ရဲ့ Constructor ကို ရရှိသွားတာကို တွေ့မြင်ရခြင်းပဲ ဖြစ်ပါတယ်
+* Dog Class မှာ run() Method မရှိပေမယ့် ပင်မ Class ကနေ ဆက်ခံရရှိထားလို့ အသုံးပြုနိုင်တာကိုလည်း တွေ့မြင်ရမှာပါ
+
+```
+class Animal
+{
+ private $name;
+ public function __construct($name)
+ {
+ $this->name = $name;
+ }
+ public function run()
+ {
+ echo "$this->name is running...";
+ }
+}
+class Dog extends Animal
+{
+ public function bark()
+ {
+ echo "Woof.. woof...";
+ }
+}
+$bobby = new Dog("Bobby");
+$bobby->run(); // Bobby is running...
+$bobby->bark(); // Woof.. woof…
+```
+
+* ပင်မ Class မှာ $name Property ရှိပေမယ့် Private Property ဖြစ်နေလို့ ပင်မ Class နဲ့သာ သက်ဆိုင်ပါတယ်
+* Dog Class က ဆက်ခံရရှိတဲ့အထဲမှာ မပါပါဘူး
+
+```
+class Animal
+{
+ private $name;
+ public function __construct($name)
+ {
+ $this->name = $name;
+ }
+}
+class Dog extends Animal
+{
+ public function bark()
+ {
+ echo "$this->name : Woof.. woof...";
+ }
+}
+$bobby = new Dog("Bobby");
+$bobby->bark(); // Undefined property: Dog::$name
+```
+
+* Protected ကို အသုံးပြုရတာပါ
+* Protected Member တွေဟာ ပင်မ Class နဲ့ရော ဆက်ခံတဲ့ Class နဲ့ပါ သက်ဆိုင်တဲ့ Member
+တွေဖြစ်ပါတယ်
+* ပင်မ Class မှာ $name Property က Protected ဖြစ်တဲ့အတွက် ဆက်ခံတဲ့ Dog Class မှာပါ အသုံးပြုခွင့် ရှိသွားလို့ပါ
+
+```
+class Animal
+{
+ protected $name;
+ public function __construct($name)
+ {
+ $this->name = $name;
+ }
+}
+class Dog extends Animal
+{
+ public function bark()
+ {
+ echo "$this->name : Woof.. woof...";
+ }
+}
+$bobby = new Dog("Bobby");
+$bobby->bark(); // Bobby : Woof.. woof…
+```
+
+* ဆက်ခံထားတဲ့ Class တွေက ပင်မ Class ရဲ့ လုပ်ဆောင်ချက်တွေကို Override လုပ်ပြီးလိုအပ်ရင် ပြန်ရေးလို့ ရပါတယ် 
+* ပင်မ Class ရဲ့လုပ်ဆောင်ချက်ကို ခေါ်သုံးလို့လည်း ရပါသေးတယ်
+* ဆက်ခံထားတဲ့ Dog Class မှာ Constructor ကိုပြန်ရေးလိုက်တာပါ
+* Dog Object တည်ဆောက်တဲ့အခါ မူလဆက်ခံထားတဲ့ Animal Constructor အလုပ်မလုပ်တော့ဘဲ အသစ်ပြန်ရေးထားတဲ့ Dog Constructor က အလုပ်လုပ်သွားမှာပါ
+* Method တွေ Property တွေကိုလည်း ဒီအတိုင်းပဲ ပြန်ရေးလို့ရပါတယ် 
+* ဒီလိုပြန်ရေးတဲ့အခါ လိုအပ်ရင် ပင်မ Class ရဲ့မူလလုပ်ဆောင်ချက်ကို ပြန်ခေါ်သုံးလို့ ရပါတယ်
+* Dog Constructor က ပင်မ Animal Class ရဲ့ Constructor ကို parent
+ရေးထုံးကနေတစ်ဆင့် ခေါ်သုံးထားတာကို တွေ့နိုင်ပါတယ်
+* Dog Object တည်ဆောက်စဉ်မှာ အလုပ်လုပ်သွားမှာက Dog Constructor ဆိုပေမယ့် မူလ Animal Constructor ကိုလည်း ခေါ်သုံးထားလို့ နှစ်ခုလုံး ပူးပေါင်း အလုပ်လုပ်သွားတဲ့သဘောကို ရရှိသွားပါတယ်
+
+```
+class Animal
+{
+ protected $name;
+ public function __construct($name)
+ {
+ $this->name = $name;
+ }
+}
+class Dog extends Animal
+{
+ private $color;
+ public function __construct($name, $color)
+ {
+ parent::__construct($name);
+ $this->color = $color;
+ }
+ public function profile()
+ {
+ echo "$this->name has $this->color color.";
+ }
+}
+$bobby = new Dog("Bobby", "brown");
+$bobby->profile(); // Bobby has brown color.
+```
+
+* Override လုပ်ပြီး ပြင်ရေးခွင့် မပြုချင်တဲ့ လုပ်ဆောင်ချက်တွေရှိရင် final ရေးထုံးကို အသုံးပြုနိုင်ပါတယ်
+* Animal Class ရဲ့ run() Method ကို final လို့ ကြေညာထားတဲ့အတွက် သူ့ကိုဆက်ခံတဲ့
+Dog Class က Override လုပ်ပြီးရေးဖို့ကြိုးစားတဲ့အခါ ခွင့်မပြုဘဲ Error ပေးတာကို တွေ့မြင်ရမှာပဲ ဖြစ်ပါတယ်
+
+```
+class Animal
+{
+ final public function run()
+ {
+ echo "Animal is running...";
+ }
+}
+class Dog extends Animal
+{
+ public function run()
+ {
+ echo "The dog is running...";
+ }
+}
+// Error: Cannot override final method
+```
+
+*  Class တစ်ခုလုံးကို ဆက်ခံခွင့် မပြုချင်ရင်လည်း final လို့ကြေညာပေးလို့ ရပါသေး
+တယ်
+* final Class ကနေ Inherit လုပ်လို့မရဘူးဆိုတဲ့ Error ကို ရရှိမှာ ဖြစ်ပါတယ်
+
+```
+final class Animal
+{
+ public function run()
+ {
+ echo "Animal is running...";
+ }
+}
+class Dog extends Animal
+{
+ //
+}
+// Error: may not inherit from final class
+```
+
+* Class တွေမှာ Abstract Class ဆိုတာလည်း ရှိပါသေးတယ် 
+* ဆက်ခံသူက မဖြစ်မနေ ရေးပေးရမယ့် သတ်မှတ်ချက်တွေကို Abstract Class မှာ ထည့်သတ်မှတ်နိုင်ပါတယ်
+* Animal Class ဟာ Abstract Class ဖြစ်သွားပါပြီ
+* Abstract Class ဖြစ်သွားရင် Abstract Method တွေလည်း ထည့်ရေးလို့ ရသွားပါပြီ
+* talk() ဟာ Abstract Method ဖြစ်ပြီး Code Body မပါတဲ့ Method ကြေညာချက်သက်သက် ဆိုတာကို တွေ့ရမှာပါ
+* ဆက်ခံသူတွေက ဒီ Abstract Method အတွက် Code Body ကို Implement လုပ် ရေးပေးရမှာပါ
+* Dog Class ဟာ Animal Class ကို ဆက်ခံထားပေမယ့် သတ်မှတ်ထားတဲ့ Abstract Method ကို ဆက်ရေးမပေးလို့ Error ဖြစ်နေတာကို တွေ့မြင်ရမှာပဲ ဖြစ်ပါတယ်
+
+```
+abstract class Animal
+{
+ public abstract function talk();
+ public function run()
+ {
+ echo "Running...";
+ }
+}
+class Dog extends Animal
+{
+ //
+}
+// Error: abstract method must be 
+// declared or implement the remaining
+```
+
+* Abstract Class နဲ့ နည်းနည်းဆင်တဲ့ Interface ရေးထုံးလည်း ရှိပါသေးတယ်
+* ကွာသွားတာကတော့ Abstract Class မှာ ရိုးရိုး Method တွေရော Abstract Method တွေရော ထည့်ရေးလို့ ရပေမယ့်၊ Interface ကတော့ Abstract Method တွေချည်းပဲ ရေးလို့ရပါတယ်
+* ရိုးရိုး Method တွေ ထည့်ရေးလို့ မရပါဘူး
+* လက်တွေ့ပရောဂျက်တွေမှာ ပြုပြင်ထိန်းသိမ်းရလွယ်တဲ့ကုဒ်တွေ ရေးသားဖို့အတွက် အထောက်အကူပြုတဲ့ ရေးနည်းတွေပါ
+* Dog နဲ့ Fish ဆိုတဲ့ Class နှစ်ခုရှိပါတယ်
+* ဆက်ရေးထားတဲ့ app() Function ကတော့ Dog Object ကို Parameter အနေနဲ့ ပေးရမယ်လို့ ရေးထားတာကိုလည်း တွေ့ရနိုင်ပါတယ် 
+* Dog Object ကိုပေးတဲ့ခါ အလုပ်လုပ်ပြီး၊ Fish Object ကိုပေးတဲ့အခါ Error တက်
+သွားတာကို တွေ့ရမှာ ဖြစ်ပါတယ်
+* Dog Object ပေးရမယ့်နေရာမှာ Dog Object ကိုပဲ အတိအကျပေးရမှာဖြစ်ပါတယ်
+* တစ်ခြား Object အမျိုးအစားကို လက်ခံမှာ မဟုတ်ပါဘူး
+* Type Hinting ရေးထုံးကိုသုံးထားလို့ ဒီလို Error တက်တာဖြစ်သလို Type Hinting ရေးထုံးကို မသုံးရင်လည်း Error တက်မှာပါပဲ
+* ပေးလိုက်တဲ့ Fish Object မှာ app() Function က အသုံးပြုလိုတဲ့ run() Method မရှိလို့ပါ
+
+```
+class Dog
+{
+ public function run()
+ {
+ echo "The dog is running";
+ }
+}
+class Fish
+{
+ public function swim()
+ {
+ echo "The fish is swimming";
+ }
+}
+function app(Dog $obj) {
+ $obj->run();
+}
+app(new Dog); // The dog is running
+app(new Fish); // Error: Argument must be Dog
+```
+
+* Interface ကိုအသုံးပြုလို့ရပါတယ်
+* အတိအကျ မတူပေမယ့် အမျိုးအစားဆင်တူတဲ့ Object တွေ တည်ဆောက်ဖို့အတွက် Interface ကိုသုံးရတာပါ
+* Animal Interface ပါဝင်သွားပါပြီ
+* အထဲမှာ Abstract Method move() ကို ကြေညာထားပါတယ်
+* Abstract Class မှာရိုးရိုး Method နဲ့ Abstract Method ကိုခွဲခြားနိုင်ဖို့ abstract Keyword ကို သုံးရပေမယ့် Interface မှာတော့ Abstract Method တွေပဲ ရေးလို့ရတာမို့လို့ ခွဲခြားပေးစရာမလိုတော့လို့ abstract Keyword ထည့်သုံးစရာ မလိုတော့ပါဘူး
+* Dog Class နဲ့ Fish Class တို့ဟာ အမျိုးအစား မတူကြပေမယ့် Implement လုပ်ထားတဲ့ Interface တူကြပါတယ် 
+* Interface တစ်ခုကို Implement လုပ်ပြီဆိုရင် Interface ကသတ်မှတ်ထားတဲ့ Method တွေကို
+ရေးပေးရပါတယ်
+* Dog Class ရော Fish Class မှာပါ move() Method ရှိပါတယ်
+* app() Function က Animal Object ကို လက်ခံမယ်လို့ သတ်မှတ်ထားပါတယ်
+* Animal Interface ကနေဆက်ခံဖြစ်ပေါ်လာတဲ့ Dog Object ကိုပေးတဲ့အခါ အလုပ်လုပ်သွားသလို
+Animal Interface ကနေပဲ ဆက်ခံဖြစ်ပေါ်လာတဲ့ Fish Object ကို ပေးတဲ့အ]ါမှာလည်း အလုပ်လုပ်သွားတာကို တွေ့မြင်ရမှာပဲ ဖြစ်ပါတယ်။
+* Interface ကိုအသုံးပြုပြီး အမျိုးအစားမတူပေမယ့်၊ Interface တူတဲ့ Object တွေကို ဖလှယ်
+အစားထိုး အသုံးပြုလို့ရရှိနိုင်သွားမှာပါ
+
+```
+interface Animal
+{
+ public function move();
+}
+class Dog implements Animal
+{
+ public function move()
+ {
+ echo "The dog is running";
+ }
+}
+class Fish implements Animal
+{
+ public function move()
+ {
+ echo "The fish is swimming";
+ }
+}
+function app(Animal $obj) {
+ $obj->move();
+}
+app(new Dog); // The dog is running
+app(new Fish); // The fish is swimming
+```
+
+* Inheritance မှာ Multiple Inheritance ခွင့်မပြုပေမယ့် Interface မှာတော့ Interface နှစ်ခုသုံးခုကို Implement လုပ်တာကို လက်ခံပါတယ်
+* Cow Class ဟာ Animal Interface နဲ့ Livestock Interface နှစ်ခုကို Implement လုပ်ထား
+တာကို တွေ့ရမှာဖြစ်ပါတယ်
+* Interface နှစ်ခုလုံးမှာ သတ်မှတ်ထားတဲ့ Abstract Method တွေဖြစ်ကြတဲ့ move() နဲ့ isFriendly() တို့ကို ပြည့်စုံအောင် Cow Class မှာ ရေးပေးရမှာပါ
+
+```
+interface Animal
+{
+ public function move();
+}
+interface Livestock
+{
+ public function isFriendly();
+}
+class Cow implements Animal, Livestock
+{
+ public function move()
+ {
+ echo "The cow is walking";
+ }
+ public function isFriendly()
+ {
+ return true;
+ }
+}
+```
+
+* Multiple Inheritance ကို ခွင့်မပြုတဲ့အတွက်ကြောင့် အစားထိုးထည့်သွင်းပေးထားတဲ့
+လုပ်ဆောင်ချက်တစ်ခု ရှိပါတယ်
+* Traits လို့ခေါ်ပါတယ်
+* Multiple Inheritance မရလို့ Class နှစ်ခုသုံးခုက လုပ်ဆောင်ချက်တွေကို တစ်ခါထဲ ဆက်ံလို့မရဘူး ဖြစ်နေတယ် ဒါကြောင့် တူညီတဲ့ကုဒ်တွေပြန်ရေးရမလို ဖြစ်နေနိုင်ပါတယ်
+* တွက်ချက်မှုတွေ လုပ်ပေးနိုင်တဲ့ Math Class နဲ့ Area Class တို့ရှိနေပါတယ်
+* Calculator Class က နှစ်ခုလုံးရဲ့လုပ်ဆောင်ချက်တွေကို ဆက်ရေံ းသားချင်ပေမယ့် Multiple Inheritance မရလို့ မရနိုင်ဘူး ဖြစ်နေပါတယ်
+* နှစ်ခုထဲက တစ်ခုပဲ ရပါတော့မယ်
+
+```
+class Math
+{
+ public function add($a, $b)
+ {
+ echo $a + $b;
+ }
+}
+class Area
+{
+ private $PI = 3.14;
+ public function circle($r)
+{
+ echo $this->PI * $r * $r;
+ }
+}
+class Calculator extends Math // and Area
+{
+ //
+}
+```
+
+* ဒီလို အခြေအနေမျိုးမှာ Traits ကို အသုံးပြုနိုင်ပါတယ်
+* Math နဲ့ Area တို့ဟာ Class တွေ မဟုတ်ကြတော့ပါဘူး
+* လိုတဲ့ Class ကနေ ခေါ်သုံးလို့ရတဲ့ Traits တွေ ဖြစ်သွားကြပါပြီ
+* Calculator Class မှာ use Statement နဲ့ ခေါ်ပေးလိုက်တဲ့အခါ Math နဲ့
+Area နှစ်ခုလုံးရဲ့လုပ်ဆောင်ချက်တွေကို Calculator Class က ရရှိသွားတာကို တွေ့ရမှာပဲ ဖြစ်ပါတယ်
+
+```
+trait Math
+{
+ public function add($a, $b)
+ {
+ echo $a + $b;
+ }
+}
+trait Area
+{
+ private $PI = 3.14;
+ public function circle($r)
+ {
+ echo $this->PI * $r * $r;
+ }
+}
+class Calculator
+{
+ use Math, Area;
+}
+$calc = new Calculator;
+$calc->add(1, 2); // 3
+$calc->circle(5); // 78.5
+```
