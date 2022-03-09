@@ -1355,3 +1355,29 @@ $calc = new Calculator;
 $calc->add(1, 2); // 3
 $calc->circle(5); // 78.5
 ```
+
+* Class Constant
+* Class တစ်ခုအတွင်းမှာ Constant ကြေညာလိုရင် const Statement ကိုအသုံးပြု ကြေညာနိုင်ပါတယ်
+* Constant အတွက် ရိုးရိုး Property လို $ သင်္ကေတ ထည့်ပေးစရာမလိုအပ်ပါဘူး
+* Traits အတွင်းမှာတော့ Constant တွေ ထည့်ရေးခွင့်မရှိပါဘူး 
+* Class အတွင်းမှာသာ ရေးခွင့်ရှိပါတယ်
+* Class Constant တွေဟာ Static Member တွေ ဆိုတာကိုလည်း သတိပြုပါ
+
+```
+class Area
+{
+ const PI = 3.14;
+ public function circle($r)
+ {
+ echo $this->PI * $r * $r;
+ }
+}
+```
+
+* အသုံးပြုလိုရင် Double Colon Operator နဲ့ အသုံးပြုပေးရမှာပါ
+* Class တိုင်းမှာ class ဆိုတဲ့ Default Constant ရှိနေပါတယ်
+* Area::class ဆိုရင် Area Class ရဲ့ Namespace အပြည့်အစုံကို ပြန်ရမှာ ဖြစ်ပါတယ်
+
+```
+echo Area::PI; // 3.14
+```
